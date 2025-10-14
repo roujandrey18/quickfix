@@ -300,16 +300,16 @@ require_once 'config/config.php';
                 $class = $test['status'] === 'success' ? 'test-success' : 'test-error';
                 $icon = $test['status'] === 'success' ? 'fa-check-circle' : 'fa-times-circle';
                 
-                echo "<div class='test-card $class'>";
+                echo "<div class='test-card " . htmlspecialchars($class) . "'>";
                 echo "<div class='test-title'>";
-                echo "<i class='fas $icon'></i> {$test['name']}";
+                echo "<i class='fas " . htmlspecialchars($icon) . "'></i> " . htmlspecialchars($test['name']);
                 echo "</div>";
                 echo "<div class='test-details'>";
-                echo "<p>{$test['message']}</p>";
+                echo "<p>" . htmlspecialchars($test['message']) . "</p>";
                 if (!empty($test['details'])) {
                     echo "<ul>";
                     foreach ($test['details'] as $detail) {
-                        echo "<li>$detail</li>";
+                        echo "<li>" . htmlspecialchars($detail) . "</li>";
                     }
                     echo "</ul>";
                 }
@@ -320,7 +320,7 @@ require_once 'config/config.php';
             // Summary
             $total = $passed + $failed;
             $summary_class = $failed === 0 ? 'test-success' : 'test-error';
-            echo "<div class='test-card summary-card $summary_class'>";
+            echo "<div class='test-card summary-card " . htmlspecialchars($summary_class) . "'>";
             if ($failed === 0) {
                 echo "<i class='fas fa-check-circle' style='font-size: 3rem; margin-bottom: 1rem; display: block;'></i>";
                 echo "<strong>All Tests Passed!</strong><br>";
@@ -329,7 +329,7 @@ require_once 'config/config.php';
                 echo "<a href='auth/login.php' class='btn btn-secondary'>Login</a>";
             } else {
                 echo "<i class='fas fa-exclamation-triangle' style='font-size: 3rem; margin-bottom: 1rem; display: block;'></i>";
-                echo "<strong>$failed Test(s) Failed</strong><br>";
+                echo "<strong>" . htmlspecialchars($failed) . " Test(s) Failed</strong><br>";
                 echo "Please check the errors above and fix them.<br><br>";
                 echo "<a href='SETUP_GUIDE.md' class='btn btn-primary'>View Setup Guide</a>";
             }
