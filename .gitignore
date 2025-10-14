@@ -1,0 +1,66 @@
+# QuickFix .gitignore
+
+# Uploaded files (user content)
+quickfix/uploads/profile_photos/*
+!quickfix/uploads/profile_photos/.gitkeep
+quickfix/uploads/service_images/*
+!quickfix/uploads/service_images/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# PHP specific
+vendor/
+composer.lock
+.phpunit.result.cache
+
+# Test files (keep in repo but ignore test outputs)
+test_output/
+coverage/
+
+# Backup files
+*.bak
+*.backup
+*.sql.backup
+*~
+
+# Development files
+/tmp/
+debug.log
+error_log
+php_errors.log
+
+# Environment files (if you add them later)
+.env
+.env.local
+.env.production
+
+# Node modules (if you add npm later)
+node_modules/
+package-lock.json
+
+# Build directories (if you add build tools later)
+dist/
+build/
