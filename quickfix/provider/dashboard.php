@@ -489,5 +489,7 @@ foreach ($bookings as $booking) {
         });
     });
     </script>
+
+    <?php include '../includes/footer.php'; ?>
 </body>
 </html>

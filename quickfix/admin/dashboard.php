@@ -276,6 +276,8 @@ $recent_bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
+    <?php include '../includes/footer.php'; ?>
+
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/admin-theme.js"></script>
 </body>

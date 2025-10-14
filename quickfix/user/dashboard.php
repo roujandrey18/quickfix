@@ -272,6 +272,8 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
+    <?php include '../includes/footer.php'; ?>
+
     <script src="../assets/js/main.js"></script>
 </body>
 </html>
